@@ -31,7 +31,7 @@ function Story({
 
   const handleNrButtonPressed = (pressedNumber: number) => {
     //Standaard case
-    //filter duplicates en sort ascending
+    //remove duplicates en sort ascending
     const buttonsPressedNoDupes = [...pressedButtons, pressedNumber].filter(
       (item, pos) => {
         return [...pressedButtons, pressedNumber].indexOf(item) == pos;
@@ -39,9 +39,9 @@ function Story({
     );
     setPressedButtons(buttonsPressedNoDupes.sort());
 
-    // Edge cases:
-    // stel je zit op verdieping 4 en je wil naar beneden maar klikt [3,5,1], dan wordt 5 in residuals gezet
-    // zelfde geldt omgekeerd: ik zit op 4 maar wil naar boven en klik [3,5,1] dan wordt 1 en 3 in residuals gezet
+    //Edge cases:
+    //stel je zit op verdieping 4 en je wil naar beneden maar klikt [3,5,1], dan wordt 5 in residuals gezet
+    //zelfde geldt omgekeerd: ik zit op 4 maar wil naar boven en klik [3,5,1] dan wordt 1 en 3 in residuals gezet
 
     //Case 1:
     //gedrukte nummers: [1,2,4], huidige verdieping: 3 en button naar beneden is gedrukt
